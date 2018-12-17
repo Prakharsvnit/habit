@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Power of habit</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+</head>
+<body>
+
+<div class="jumbotron">
+    <h1 class="text-center">Power of habit</h1>
+</div>
+
+<div class="container">
+
+  <div class="row"> 
+    <div class="col-xs-5 col-xs-offset-3">
+      <div class = "alert alert-info text-center">
+        <strong>Info!</strong> Edit your details.Don't press Refresh.
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2 class="text-center text-primary">Edit details: </h2>
+  </div>
+
+    <div class="row">
+
+      <div class="col-xs-6 col-xs-offset-3">
+      {% for habit in habits %} 
+       <ul>
+         <li><h3>Days: <input type="number" value="{{ habit.day }}"></h3></li>
+
+         <li><h3>Habit1: <input type="text" value="{{ habit.habit1 }}"><button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button></h3></li>
+
+         <li><h3>Habit2: <input type="text" value="{{ habit.habit2 }}"><button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button></h3></li>
+
+         <li><h3>Habit3: <input type="text" value="{{ habit.habit3 }}"><button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button></h3></li>
+
+         <li><h3>Habit4: <input type="text" value="{{ habit.habit4 }}"><button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button></h3></li>
+
+         <li><h3>Habit5: <input type="text" value="{{ habit.habit5 }}"><button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button></h3></li>
+
+         <li><h3>Habit6: <input type="text" value="{{ habit.habit6 }}"><button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button></h3></li>
+
+         <li><h3>Habit7: <input type="text" value="{{ habit.habit7 }}"><button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button></h3></li>
+
+         <li><h3>Habit8: <input type="text" value="{{ habit.habit8 }}"><button type="button" class="btn btn-danger" style="margin-left: 20px;">Delete</button></h3></li>
+       </ul>  
+        {% endfor %} 
+      </div>
+
+  </div>
+
+    <div class="row text-center">
+        <h2><div class="checkbox">
+          <input type="checkbox" value="">I confirm to follow the above habits.
+          <button type="submit" class="btn btn-success">Submit</button></h2>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<form method="post" action="/final/">
+  
+</form>
+
+
